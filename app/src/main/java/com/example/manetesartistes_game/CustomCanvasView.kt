@@ -41,6 +41,13 @@ class CustomCanvasView @JvmOverloads constructor(
         isAntiAlias = true
     }
 
+    init {
+        // Obtain custom attributes from XML
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomCanvasView)
+        isEditable = typedArray.getBoolean(R.styleable.CustomCanvasView_isEditable, true) // Default to true
+        typedArray.recycle()
+    }
+
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
