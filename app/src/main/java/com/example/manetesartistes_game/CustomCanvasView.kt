@@ -9,15 +9,6 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import android.graphics.Bitmap
 import android.graphics.Path
-import org.opencv.android.Utils
-import org.opencv.core.CvType
-import org.opencv.core.Mat
-import org.opencv.core.MatOfPoint
-import org.opencv.core.Point
-import org.opencv.core.Scalar
-import org.opencv.core.Size
-import org.opencv.imgproc.Imgproc
-
 
 
 class CustomCanvasView @JvmOverloads constructor(
@@ -176,56 +167,4 @@ class CustomCanvasView @JvmOverloads constructor(
     fun setSelectedColor(color: Int) {
         selectedColor = color
     }
-
-    fun loadFishImageAndConvertToPath(context: Context): List<Path> {
-        // Load the fish.png image from the drawable resources
-        val bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.fish)
-
-        // Call the function that processes the Bitmap
-        return pngToPath(context, bitmap)
-    }
-
-    fun pngToPath(context: Context, bitmap: Bitmap): List<Path> {
-        val paths = mutableListOf<Path>()
-
-        // Convertir el Bitmap a un Mat de OpenCV
-        val mat = Mat(bitmap.height, bitmap.width, CvType.CV_8UC4)
-        Utils.bitmapToMat(bitmap, mat)
-
-        // Convertir a escala de grises
-        val gray = Mat()
-        Imgproc.cvtColor(mat, gray, Imgproc.COLOR_BGR2GRAY)
-
-        // Aplicar desenfoque para reducir el ruido
-        Imgproc.GaussianBlur(gray, gray, Size(5.0, 5.0), 0.0)
-
-        // Detectar bordes usando el algoritmo de Canny
-        val edges = Mat()
-        Imgproc.Canny(gray, edges, 100.0, 200.0)
-
-        // Encontrar los contornos
-        val contours = mutableListOf<MatOfPoint>()
-        val hierarchy = Mat()
-        Imgproc.findContours(edges, contours, hierarchy, Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE)
-
-        // Convertir cada contorno a un Path
-        for (contour in contours) {
-            val path = Path()
-            val points = contour.toList()
-
-            if (points.isNotEmpty()) {
-                path.moveTo(points[0].x.toFloat(), points[0].y.toFloat())
-
-                for (i in 1 until points.size) {
-                    path.lineTo(points[i].x.toFloat(), points[i].y.toFloat())
-                }
-
-                path.close()
-                paths.add(path)
-            }
-        }
-
-        return paths
-    }
-
 }
