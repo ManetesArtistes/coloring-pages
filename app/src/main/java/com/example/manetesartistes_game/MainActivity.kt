@@ -2,19 +2,9 @@ package com.example.manetesartistes_game
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.view.MotionEvent
-import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import java.util.LinkedList
-import java.util.Queue
-import android.graphics.drawable.BitmapDrawable
+
 
 class MainActivity : AppCompatActivity() {
 
