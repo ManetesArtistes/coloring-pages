@@ -4,28 +4,46 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white"-->
+<!--        >-->
 
-    <Button
-        android:id="@+id/toggleTeacherModeButton"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Toggle Teacher Mode" />
-
-    <!-- Canvas View on the left -->
-    <com.example.manetesartistes_game.CustomCanvasView
-        android:id="@+id/canvasView"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:background="#FFFFFF"
-        app:isEditable="true"
+        android:scaleType="matrix"
         />
+<!--    </LinearLayout>-->
 
-    <!-- RecyclerView for Color Palette on the right -->
-    <com.example.manetesartistes_game.ColorPalette
-        android:id="@+id/colorPalette"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="0.2"-->
+<!--        android:background="#00FF00"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/toggleTeacherModeButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Toggle Teacher Mode" />-->
+
+<!--    &lt;!&ndash; Canvas View on the left &ndash;&gt;-->
+<!--    <com.example.manetesartistes_game.CustomCanvasView-->
+<!--        android:id="@+id/canvasView"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_weight="3"-->
+<!--        android:background="#FFFFFF"-->
+<!--        app:isEditable="true"-->
+<!--        />-->
+
+<!--    &lt;!&ndash; RecyclerView for Color Palette on the right &ndash;&gt;-->
+<!--    <com.example.manetesartistes_game.ColorPalette-->
+<!--        android:id="@+id/colorPalette"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
 </LinearLayout>
