@@ -36,9 +36,9 @@ class ImageEditor: AppCompatActivity() {
                         val targetColor = bitmap.getPixel(imageX, imageY)
                         val newColor = Color.parseColor("#f59542")  // Set the new color
 
-                        FloodFillUtils.floodFill(bitmap, imageX, imageY, targetColor, newColor)
+                        val newBitmap = FloodFillUtils.floodFill(bitmap, imageX, imageY, targetColor, newColor)
 
-                        imageView.setImageBitmap(bitmap)
+                        imageView.setImageBitmap(newBitmap)
                     }
                 }
                 true
