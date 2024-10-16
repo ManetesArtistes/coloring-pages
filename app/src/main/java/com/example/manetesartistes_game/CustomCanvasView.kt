@@ -7,6 +7,9 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import android.graphics.Bitmap
+import android.graphics.Path
+
 
 class CustomCanvasView @JvmOverloads constructor(
     context: Context,
@@ -21,7 +24,7 @@ class CustomCanvasView @JvmOverloads constructor(
     private var isDrawing = false
 
     private val figures = mutableListOf<Figure>()
-    var isTeacher: Boolean? = true
+    var isEditable: Boolean? = true
     private var selectedColor = Color.WHITE
 
     private val paint = Paint().apply {
@@ -41,13 +44,20 @@ class CustomCanvasView @JvmOverloads constructor(
         isAntiAlias = true
     }
 
+    init {
+        // Obtain custom attributes from XML
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomCanvasView)
+        isEditable = typedArray.getBoolean(R.styleable.CustomCanvasView_isEditable, true) // Default to true
+        typedArray.recycle()
+    }
+
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
 
         // transparent color for teacher
-        if(isTeacher == true){
+        if(isEditable == true){
             fillPaint.color = Color.TRANSPARENT
             borderPaint.color = Color.BLACK
             paint.color = Color.TRANSPARENT
@@ -78,7 +88,7 @@ class CustomCanvasView @JvmOverloads constructor(
 
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
-                if(isTeacher == true){
+                if(isEditable == true){
                     currentPath = Path().apply {
                         moveTo(x, y)
                     }
@@ -150,7 +160,7 @@ class CustomCanvasView @JvmOverloads constructor(
     }
 
     fun toggleTeacherMode() {
-        isTeacher = !(isTeacher ?: true)
+        isEditable = !(isEditable ?: true)
         invalidate() // Redraw the canvas to reflect the mode change
     }
 
