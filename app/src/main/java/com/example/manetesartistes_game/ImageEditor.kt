@@ -12,6 +12,12 @@ import android.widget.ImageView
 
 class ImageEditor: AppCompatActivity() {
 
+    enum class DeviceType {
+        GALAXY_TAB_A,
+        EMULATOR,
+        OTHER
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,18 +38,16 @@ class ImageEditor: AppCompatActivity() {
         imageView.setOnTouchListener { v, event ->
             try {
                 if (event.action == MotionEvent.ACTION_DOWN) {
-                    val isGalaxyTabA = true;
-                    val isEmulator = false;
-                    var imageX: Int;
-                    var imageY: Int;
-                    if(isGalaxyTabA){
-                        imageX = (event.x / 1.55).toInt()
-                        imageY = (event.y / 1.55).toInt()
+                    // calibrate image coordinates
+                    val deviceType = DeviceType.EMULATOR
+                    val (scaleX, scaleY) = when(deviceType) {
+                        DeviceType.GALAXY_TAB_A -> Pair(1.55, 1.55)
+                        DeviceType.EMULATOR -> Pair(2.0, 2.0)
+                        DeviceType.OTHER -> Pair(2.0, 2.0)
                     }
-                    if(isEmulator){
-                        imageX = (event.x / 2).toInt()
-                        imageY = (event.y / 2).toInt()
-                    }
+
+                    val imageX = (event.x / scaleX).toInt()
+                    val imageY = (event.y / scaleY).toInt()
 
                     println("imageX$imageX")
                     println("imageY$imageY")
@@ -74,4 +78,6 @@ class ImageEditor: AppCompatActivity() {
             }
         }
     }
+
+
 }
