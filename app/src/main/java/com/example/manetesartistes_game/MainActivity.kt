@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
             setContentView(R.layout.activity_main)
 
                 val intent = Intent(this, ImageEditor::class.java)
-                intent.putExtra("IMAGE_RES_ID", R.drawable.fish) // Replace with your image resource ID
+                intent.putExtra("IMAGE_RES_ID", R.drawable.fish2) // Replace with your image resource ID
                 startActivity(intent)
 
 
