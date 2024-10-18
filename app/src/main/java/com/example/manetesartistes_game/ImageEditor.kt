@@ -18,10 +18,20 @@ class ImageEditor: AppCompatActivity() {
         OTHER
     }
 
+    private var selectedColor: Int = Color.parseColor("#f59542")
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_editor)
+
+        val colorPalette = findViewById<ColorPalette>(R.id.colorPalette)
+
+        // Set the listener to handle color selection
+        colorPalette.onColorSelected = { selectedColor ->
+            this.setSelectedColor(selectedColor)
+            println(this.selectedColor)
+        }
 
         val imageView = findViewById<ImageView>(R.id.imageView)
 
@@ -57,17 +67,10 @@ class ImageEditor: AppCompatActivity() {
                         var bitmap = (imageView.drawable as BitmapDrawable).bitmap
                         bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
                         val targetColor = bitmap.getPixel(imageX, imageY)
-                        val newColor = Color.parseColor("#f59542")  // Set the new color
 
-                        val newBitmap = FloodFillUtils.floodFill(bitmap, imageX, imageY, targetColor, newColor)
+                        val newBitmap = FloodFillUtils.floodFill(bitmap, imageX, imageY, targetColor, this.selectedColor)
 
                         imageView.setImageBitmap(newBitmap)
-
-                        // Set ImageView dimensions to match the bitmap dimensions
-//                        val layoutParams = imageView.layoutParams
-//                        layoutParams.width = bitmap.width
-//                        layoutParams.height = bitmap.height
-//                        imageView.layoutParams = layoutParams
                     }
                 }
                 true
@@ -77,6 +80,10 @@ class ImageEditor: AppCompatActivity() {
                 true
             }
         }
+    }
+
+    fun setSelectedColor(color: Int) {
+        selectedColor = color
     }
 
 
