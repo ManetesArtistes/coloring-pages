@@ -1,0 +1,118 @@
+{
+  "colors": [
+    {
+      "id": 1,
+      "name": "White",
+      "hex": "#FFFFFF",
+      "image": "white.png"
+    },
+    {
+      "id": 2,
+      "name": "Blue",
+      "hex": "#0CBAD2",
+      "image": "blue.png"
+    },
+    {
+      "id": 3,
+      "name": "Dark Blue",
+      "hex": "#0075BA",
+      "image": "dark_blue.png"
+    },
+    {
+      "id": 4,
+      "name": "Gray Blue",
+      "hex": "#DFF3FC",
+      "image": "gray_blue.png"
+    },
+    {
+      "id": 5,
+      "name": "Skin",
+      "hex": "#FEBA95",
+      "image": "skin.png"
+    },
+    {
+      "id": 6,
+      "name": "Dark Skin",
+      "hex": "#F6A566",
+      "image": "dark_skin.png"
+    },
+    {
+      "id": 7,
+      "name": "Elephant Gray",
+      "hex": "#C3A88B",
+      "image": "elephant_gray.png"
+    },
+    {
+      "id": 8,
+      "name": "Yellow",
+      "hex": "#FFED00",
+      "image": "yellow.png"
+    },
+    {
+      "id": 9,
+      "name": "Purple",
+      "hex": "#7A3295",
+      "image": "purple.png"
+    },
+    {
+      "id": 10,
+      "name": "Brown",
+      "hex": "#8C4D18",
+      "image": "brown.png"
+    },
+    {
+      "id": 11,
+      "name": "Light Brown",
+      "hex": "#AD6E29",
+      "image": "light_brown.png"
+    },
+    {
+      "id": 12,
+      "name": "Black",
+      "hex": "#000000",
+      "image": "black.png"
+    },
+    {
+      "id": 13,
+      "name": "Pink",
+      "hex": "#FB888D",
+      "image": "pink.png"
+    },
+    {
+      "id": 14,
+      "name": "Hot Pink",
+      "hex": "#EA5694",
+      "image": "hot_pink.png"
+    },
+    {
+      "id": 15,
+      "name": "Orange",
+      "hex": "#FA9D11",
+      "image": "orange.png"
+    },
+    {
+      "id": 16,
+      "name": "Dark Orange",
+      "hex": "#ED772F",
+      "image": "dark_orange.png"
+    },
+    {
+      "id": 17,
+      "name": "Green",
+      "hex": "#229643",
+      "image": "green.png"
+    },
+    {
+      "id": 18,
+      "name": "Light Green",
+      "hex": "#B6B936",
+      "image": "light_green.png"
+    },
+    {
+      "id": 19,
+      "name": "Red",
+      "hex": "#F23619",
+      "image": "red.png"
+    }
+  ]
+}
