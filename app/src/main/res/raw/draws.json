@@ -3,8 +3,8 @@
       "id": 1,
       "white_image": "draw_white_fish",
       "colored_image": "draw_colored_fish",
-      "square_background_image": "background_square_ocean",
-      "background_image": "ocean.png",
+      "square_background_image": "background_ocean",
+      "background_image": "background_ocean",
       "colors": [2, 8, 17, 15, 16, 9, 1, 12]
     }
  ]

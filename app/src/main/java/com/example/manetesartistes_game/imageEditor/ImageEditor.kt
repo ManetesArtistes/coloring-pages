@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.ImageView
+import android.widget.LinearLayout
 import com.example.manetesartistes_game.R
 import com.example.manetesartistes_game.colors.ColorPalette
 import com.example.manetesartistes_game.draw.Draw
@@ -37,16 +38,22 @@ class ImageEditor: AppCompatActivity() {
         }
 
         try {
+            // get elements
             val imageView = findViewById<ImageView>(R.id.imageView)
+            val containerImageView = findViewById<LinearLayout>(R.id.containerImageView)
 
             val drawData: Draw? = intent.getSerializableExtra("DRAW_DATA") as Draw?
 
             val imageResId = intent.getIntExtra("IMAGE_RES_ID", -1)
             if (imageResId != -1 && drawData != null) {
-                println("DRAW_DATA_IMAGE")
-                println(drawData)
-                val resourceId = resources.getIdentifier(drawData.whiteImage, "drawable", packageName)
-                imageView.setImageResource(resourceId)
+
+                // get resources
+                val drawWhiteImageResource = resources.getIdentifier(drawData.whiteImage, "drawable", packageName)
+                val bgImageResource = resources.getIdentifier(drawData.backgroundImage, "drawable", packageName)
+
+                imageView.setImageResource(drawWhiteImageResource)
+
+                containerImageView.setBackgroundResource(bgImageResource)
             }
 
             imageView.setOnTouchListener { v, event ->

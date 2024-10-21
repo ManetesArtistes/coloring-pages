@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 println("DRAW_DATA")
         println(draw)
                 intent.putExtra("DRAW_DATA", draw)
-                intent.putExtra("IMAGE_RES_ID", R.drawable.white_fish) // Replace with your image resource ID
+                intent.putExtra("IMAGE_RES_ID", R.drawable.draw_white_fish) // Replace with your image resource ID
                 startActivity(intent)
 
 
