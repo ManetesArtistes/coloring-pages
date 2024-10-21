@@ -14,7 +14,7 @@
         android:scaleType="matrix"
         tools:ignore="DiscouragedApi" />
 
-    <com.example.manetesartistes_game.ColorPalette
+    <com.example.manetesartistes_game.colors.ColorPalette
         android:id="@+id/colorPalette"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

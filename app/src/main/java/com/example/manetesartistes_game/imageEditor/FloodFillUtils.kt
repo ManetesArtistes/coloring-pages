@@ -1,4 +1,4 @@
-package com.example.manetesartistes_game
+package com.example.manetesartistes_game.imageEditor
 
 import android.graphics.Bitmap
 import android.graphics.Color

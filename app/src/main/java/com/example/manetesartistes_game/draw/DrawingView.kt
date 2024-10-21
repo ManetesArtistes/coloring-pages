@@ -1,4 +1,4 @@
-package com.example.manetesartistes_game
+package com.example.manetesartistes_game.draw
 
 import android.content.Context
 import android.graphics.*

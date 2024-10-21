@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ImageEditor"
+            android:name=".imageEditor.ImageEditor"
             android:label="Image Editor"
             android:exported="true"/>
     </application>

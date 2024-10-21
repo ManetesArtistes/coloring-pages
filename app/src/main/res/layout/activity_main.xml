@@ -30,7 +30,7 @@
 <!--        android:text="Toggle Teacher Mode" />-->
 
 <!--    &lt;!&ndash; Canvas View on the left &ndash;&gt;-->
-<!--    <com.example.manetesartistes_game.CustomCanvasView-->
+<!--    <com.example.manetesartistes_game.draw.CustomCanvasView-->
 <!--        android:id="@+id/canvasView"-->
 <!--        android:layout_width="0dp"-->
 <!--        android:layout_height="match_parent"-->
@@ -40,7 +40,7 @@
 <!--        />-->
 
 <!--    &lt;!&ndash; RecyclerView for Color Palette on the right &ndash;&gt;-->
-<!--    <com.example.manetesartistes_game.ColorPalette-->
+<!--    <com.example.manetesartistes_game.colors.ColorPalette-->
 <!--        android:id="@+id/colorPalette"-->
 <!--        android:layout_width="0dp"-->
 <!--        android:layout_height="wrap_content"-->

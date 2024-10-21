@@ -1,4 +1,4 @@
-package com.example.manetesartistes_game
+package com.example.manetesartistes_game.colors
 
 import android.content.Context
 import android.graphics.Color
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.manetesartistes_game.R
 
 class ColorPalette @JvmOverloads constructor(
     context: Context,

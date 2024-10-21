@@ -1,9 +1,10 @@
-package com.example.manetesartistes_game
+package com.example.manetesartistes_game.colors
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.manetesartistes_game.R
 
 class ColorPaletteAdapter(
     private val colors: List<Int>,

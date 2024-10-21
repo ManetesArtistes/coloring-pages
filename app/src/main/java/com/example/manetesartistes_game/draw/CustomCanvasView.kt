@@ -1,14 +1,12 @@
-package com.example.manetesartistes_game
+package com.example.manetesartistes_game.draw
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
-import android.graphics.Bitmap
 import android.graphics.Path
+import com.example.manetesartistes_game.R
 
 
 class CustomCanvasView @JvmOverloads constructor(

@@ -1,4 +1,4 @@
-package com.example.manetesartistes_game
+package com.example.manetesartistes_game.imageEditor
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.ImageView
+import com.example.manetesartistes_game.R
+import com.example.manetesartistes_game.colors.ColorPalette
 
 class ImageEditor: AppCompatActivity() {
 
