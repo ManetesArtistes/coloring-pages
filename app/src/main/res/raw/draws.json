@@ -1,12 +1,11 @@
-{
-  "draws": [
+ [
     {
       "id": 1,
-      "white_image": "white_fish.png",
-      "colored_image": "colored_fish.png",
-      "square_background_image": "square_ocean.png",
+      "white_image": "draw_white_fish",
+      "colored_image": "draw_colored_fish",
+      "square_background_image": "background_square_ocean",
       "background_image": "ocean.png",
       "colors": [2, 8, 17, 15, 16, 9, 1, 12]
     }
-  ]
-}
+ ]
+

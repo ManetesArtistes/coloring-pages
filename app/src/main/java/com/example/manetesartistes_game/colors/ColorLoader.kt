@@ -12,7 +12,7 @@ object ColorLoader {
     private fun loadColors() {
         if (colorsMap.isNotEmpty()) return // Return if already loaded
 
-        val jsonString = File("src/main/resources/raw/colors.json").readText()
+        val jsonString = File("src/main/res/raw/colors.json").readText()
         val gson = Gson()
 
         val colorListType = object : TypeToken<List<Color>>() {}.type

@@ -1,5 +1,7 @@
 package com.example.manetesartistes_game.draw
 
+import android.content.Context
+import com.example.manetesartistes_game.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
@@ -9,10 +11,11 @@ object DrawLoader {
     private val drawsMap: HashMap<Int, Draw> = HashMap()
 
     // Load draws into the HashMap from JSON file
-    private fun loadDraws() {
-        if (drawsMap.isNotEmpty()) return // Return if already loaded
+    fun loadDraws(context: Context) {
+        if (drawsMap.isNotEmpty()) return
 
-        val jsonString = File("src/main/resources/raw/draws.json").readText()
+        val inputStream = context.resources.openRawResource(R.raw.draws)
+        val jsonString = inputStream.bufferedReader().use { it.readText() }
         val gson = Gson()
 
         val drawListType = object : TypeToken<List<Draw>>() {}.type
@@ -22,15 +25,14 @@ object DrawLoader {
         drawsMap.putAll(drawList.associateBy { it.id })
     }
 
+
     // Function to get a draw by ID
     fun getDrawById(id: Int): Draw? {
-        loadDraws() // Ensure draws are loaded before accessing
         return drawsMap[id]
     }
 
     // Function to get all draws
     fun getAllDraws(): Collection<Draw> {
-        loadDraws() // Ensure draws are loaded before accessing
         return drawsMap.values
     }
 }
