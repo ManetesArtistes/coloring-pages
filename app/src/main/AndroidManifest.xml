@@ -24,7 +24,10 @@
         <activity
             android:name=".imageEditor.ImageEditor"
             android:label="Image Editor"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="landscape"
+        android:windowSoftInputMode="stateHidden"
+        android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
