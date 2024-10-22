@@ -81,23 +81,28 @@ class ImageEditor: AppCompatActivity() {
         }
     }
 
+    private fun getCalibrationScaleFactor(context: Context): Pair<Double, Double> {
+        val metrics = context.resources.displayMetrics
+        val density = metrics.densityDpi
+
+        return when {
+            density >= 400 -> Pair(2.0, 2.0)
+            density in 300..399 -> Pair(1.75, 1.75)
+            density in 200..299 -> Pair(1.5, 1.5)
+            else -> Pair(1.0, 1.0)
+        }
+    }
+
     private fun onTouchImage(event: MotionEvent, imageView: ImageView): Boolean {
         try {
             if (event.action == MotionEvent.ACTION_DOWN) {
+                val scaleFactors = getCalibrationScaleFactor(imageView.context)
 
-                // calibrate image coordinates
-                val (scaleX, scaleY) = when(deviceType) {
-                    DeviceType.GALAXY_TAB_A -> Pair(1.55, 1.55)
-                    DeviceType.EMULATOR -> Pair(2.0, 2.0)
-                    DeviceType.OTHER -> Pair(2.0, 2.0)
-                }
-
-                val imageX = (event.x / scaleX).toInt()
-                val imageY = (event.y / scaleY).toInt()
+                val imageX = (event.x / scaleFactors.first).toInt()
+                val imageY = (event.y / scaleFactors.second).toInt()
 
                 println("imageX$imageX")
                 println("imageY$imageY")
-
 
                 if (imageX != -1 && imageY != -1) {
                     var bitmap = (imageView.drawable as BitmapDrawable).bitmap
@@ -116,6 +121,7 @@ class ImageEditor: AppCompatActivity() {
             return true
         }
     }
+
 
     fun getScreenDimensions(context: Context): Pair<Int, Int> {
         val displayMetrics = DisplayMetrics()
