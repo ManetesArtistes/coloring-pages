@@ -38,7 +38,7 @@ class FloodFillUtils {
                 val (currentX, currentY) = queue.remove()
 
                 // avoid out of bounds
-                if(isPairAtBounds(Pair(currentX, currentY), width, height)) {
+                if (isPairAtBounds(Pair(currentX, currentY), width, height)) {
                     return backupBitmap
                 }
 
@@ -65,6 +65,7 @@ class FloodFillUtils {
         fun isPairAtBounds(pair: Pair<Int, Int>, width: Int, height: Int): Boolean {
             return pair.first < 0 || pair.second < 0 || pair.first >= width || pair.second >= height
         }
+
         fun isWithinTolerance(color1: Int, color2: Int, tolerance: Double): Boolean {
             val red1 = Color.red(color1)
             val green1 = Color.green(color1)
