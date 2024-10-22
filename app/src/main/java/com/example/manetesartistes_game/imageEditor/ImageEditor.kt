@@ -1,11 +1,13 @@
 package com.example.manetesartistes_game.imageEditor
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.ImageView
@@ -22,12 +24,20 @@ class ImageEditor: AppCompatActivity() {
         OTHER
     }
 
+    private val deviceType = DeviceType.EMULATOR
+
+
     private var selectedColor: Int = Color.parseColor("#f59542")
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_editor)
+
+        val (width, height) = getScreenDimensions(this)
+        println("width and height")
+        println(width)
+        println(height)
 
         val colorPalette = findViewById<ColorPalette>(R.id.colorPalette)
 
@@ -59,8 +69,8 @@ class ImageEditor: AppCompatActivity() {
             imageView.setOnTouchListener { v, event ->
                 try {
                     if (event.action == MotionEvent.ACTION_DOWN) {
+
                         // calibrate image coordinates
-                        val deviceType = DeviceType.EMULATOR
                         val (scaleX, scaleY) = when(deviceType) {
                             DeviceType.GALAXY_TAB_A -> Pair(1.55, 1.55)
                             DeviceType.EMULATOR -> Pair(2.0, 2.0)
@@ -97,6 +107,17 @@ class ImageEditor: AppCompatActivity() {
             Log.e("Error", e.stackTraceToString())
         }
 
+    }
+
+    fun getScreenDimensions(context: Context): Pair<Int, Int> {
+        val displayMetrics = DisplayMetrics()
+        val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as android.view.WindowManager
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+
+        val width = displayMetrics.widthPixels
+        val height = displayMetrics.heightPixels
+
+        return Pair(width, height)
     }
 
     fun setSelectedColor(color: Int) {
