@@ -6,7 +6,7 @@
     >
     <LinearLayout
         android:id="@+id/bgColorPaletteImage"
-        android:layout_marginBottom="10dp"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="200dp">
         <ImageView
@@ -23,4 +23,11 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:layout_gravity="center_horizontal"/>
+
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:background="@drawable/button"-->
+<!--        android:text="Guardar"-->
+<!--        />-->
 </LinearLayout>
