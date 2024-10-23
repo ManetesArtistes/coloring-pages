@@ -33,17 +33,15 @@ class ColorPalette @JvmOverloads constructor(
 
     private fun setupRecyclerView() {
         // Se configura el GridLayoutManager con 2 columnas
-        val layoutManager = GridLayoutManager(context, 2) // 2 columnas
+        val layoutManager = GridLayoutManager(context, 2)
         colorPaletteRecyclerView.layoutManager = layoutManager
         render()
     }
 
     private fun render() {
-        println("============ count colors ${colors.size}")
         val adapter = ColorAdapter(context, this.colors) { selectedColor ->
             onColorSelected(selectedColor)
         }
-        println("============ count adapter ${adapter.itemCount}")
         colorPaletteRecyclerView.adapter = adapter
     }
 

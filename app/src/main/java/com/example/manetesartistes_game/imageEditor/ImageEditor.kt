@@ -75,8 +75,7 @@ class ImageEditor: AppCompatActivity() {
     private fun renderColorPalette(colorsIds: List<Int>){
         val colorPalette = findViewById<ColorPalette>(R.id.colorPalette)
         val colors = ColorLoader.getColorsByIds(colorsIds, this)
-        println("====================== colors raw data class =================")
-        println(colors)
+
         colorPalette.setColors(colors)
         // Set the listener to handle color selection
         colorPalette.onColorSelected = { selectedColor ->
