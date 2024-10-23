@@ -3,6 +3,7 @@ package com.example.manetesartistes_game.colors
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,6 +44,20 @@ class ColorPalette @JvmOverloads constructor(
             onColorSelected(selectedColor)
         }
         colorPaletteRecyclerView.adapter = adapter
+    }
+
+     fun renderColorImage(image: Int, bgImage: Int) {
+
+        if(image!=0){
+            val imageView = findViewById<ImageView>(R.id.colorPaletteImage)
+            imageView.setImageResource(image)
+        }
+
+         if(bgImage!=0){
+             val containerImageView = findViewById<LinearLayout>(R.id.bgColorPaletteImage)
+             containerImageView.setBackgroundResource(bgImage)
+         }
+
     }
 
     // Function to handle color selection

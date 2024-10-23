@@ -19,15 +19,6 @@ import com.example.manetesartistes_game.draw.Draw
 
 class ImageEditor: AppCompatActivity() {
 
-    enum class DeviceType {
-        GALAXY_TAB_A,
-        EMULATOR,
-        OTHER
-    }
-
-    private val deviceType = DeviceType.EMULATOR
-
-
     private var selectedColor: Int = Color.parseColor("#f59542")
 
     @SuppressLint("ClickableViewAccessibility")
@@ -35,18 +26,13 @@ class ImageEditor: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_editor)
 
-        val (width, height) = getScreenDimensions(this)
-        println("width and height")
-        println(width)
-        println(height)
-
         try {
             val drawData: Draw? = intent.getSerializableExtra("DRAW_DATA") as Draw?
 
             if (drawData != null) {
                 renderDrawWhiteImage(drawData.whiteImage)
                 renderBackgroundImage(drawData.backgroundImage)
-                renderColorPalette(drawData.colors)
+                renderColorPalette(drawData)
             }
 
         }catch (e: Exception) {
@@ -72,10 +58,12 @@ class ImageEditor: AppCompatActivity() {
         }
     }
 
-    private fun renderColorPalette(colorsIds: List<Int>){
+    private fun renderColorPalette(draw: Draw){
         val colorPalette = findViewById<ColorPalette>(R.id.colorPalette)
-        val colors = ColorLoader.getColorsByIds(colorsIds, this)
-
+        val colors = ColorLoader.getColorsByIds(draw.colors, this)
+        val resource = resources.getIdentifier(draw.coloredImage, "drawable", packageName)
+        val bgResource = resources.getIdentifier(draw.squareBackgroundImage, "drawable", packageName)
+        colorPalette.renderColorImage(resource, bgResource)
         colorPalette.setColors(colors)
         // Set the listener to handle color selection
         colorPalette.onColorSelected = { selectedColor ->
@@ -104,9 +92,6 @@ class ImageEditor: AppCompatActivity() {
                 val imageX = (event.x / scaleFactors.first).toInt()
                 val imageY = (event.y / scaleFactors.second).toInt()
 
-                println("imageX$imageX")
-                println("imageY$imageY")
-
                 if (imageX != -1 && imageY != -1) {
                     var bitmap = (imageView.drawable as BitmapDrawable).bitmap
                     bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
@@ -123,18 +108,6 @@ class ImageEditor: AppCompatActivity() {
             Log.e("Error", e.stackTraceToString())
             return true
         }
-    }
-
-
-    fun getScreenDimensions(context: Context): Pair<Int, Int> {
-        val displayMetrics = DisplayMetrics()
-        val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as android.view.WindowManager
-        windowManager.defaultDisplay.getMetrics(displayMetrics)
-
-        val width = displayMetrics.widthPixels
-        val height = displayMetrics.heightPixels
-
-        return Pair(width, height)
     }
 
     fun setSelectedColor(color: Int) {

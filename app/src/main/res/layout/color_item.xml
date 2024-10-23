@@ -3,7 +3,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="5dp"
-    android:layout_marginTop="15dp">
+>
 
     <ImageView
         android:id="@+id/colorImage"

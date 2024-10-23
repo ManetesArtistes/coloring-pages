@@ -4,11 +4,23 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
+    <LinearLayout
+        android:id="@+id/bgColorPaletteImage"
+        android:layout_marginBottom="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/colorPaletteImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/colorPaletteRecyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:background="@android:color/transparent"/>
 </LinearLayout>
