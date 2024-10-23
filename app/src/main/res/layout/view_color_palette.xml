@@ -6,9 +6,8 @@
     >
     <LinearLayout
         android:id="@+id/bgColorPaletteImage"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
         android:layout_height="200dp">
         <ImageView
             android:id="@+id/colorPaletteImage"
@@ -22,5 +21,6 @@
         android:id="@+id/colorPaletteRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
