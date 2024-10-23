@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.example.manetesartistes_game.R
@@ -24,6 +25,14 @@ class ImageEditor: AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION       // Hides the navigation bar
+                        or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION  // Allows layout to expand under navigation
+                        or View.SYSTEM_UI_FLAG_FULLSCREEN          // Hides the status bar
+                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN   // Allows layout to expand under the status bar
+                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY    // Ensures that the UI stays hidden even after user interaction
+                )
         setContentView(R.layout.activity_image_editor)
 
         try {
