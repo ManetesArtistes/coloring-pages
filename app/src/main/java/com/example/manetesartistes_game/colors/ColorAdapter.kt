@@ -17,13 +17,15 @@ class ColorAdapter(
 
     inner class ColorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val colorImageView: ImageView = itemView.findViewById(R.id.colorImage)
-        private val colorNameTextView: TextView = itemView.findViewById(R.id.colorName)
 
         fun bind(color: Color) {
             val imageResId = context.resources.getIdentifier(color.image, "drawable", context.packageName)
+
+            if(imageResId == 0){
+                println("image not found: ${color.image}")
+            }
             colorImageView.setImageResource(imageResId)
 
-            colorNameTextView.text = color.name
 
             itemView.setOnClickListener {
                 onColorSelected(android.graphics.Color.parseColor(color.hex))

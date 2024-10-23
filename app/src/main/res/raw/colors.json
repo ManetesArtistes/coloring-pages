@@ -3,114 +3,114 @@
       "id": 1,
       "name": "White",
       "hex": "#FFFFFF",
-      "image": "white.png"
+      "image": "white"
     },
     {
       "id": 2,
       "name": "Blue",
       "hex": "#0CBAD2",
-      "image": "blue.png"
+      "image": "blue"
     },
     {
       "id": 3,
       "name": "Dark Blue",
       "hex": "#0075BA",
-      "image": "dark_blue.png"
+      "image": "dark_blue"
     },
     {
       "id": 4,
       "name": "Gray Blue",
       "hex": "#DFF3FC",
-      "image": "gray_blue.png"
+      "image": "gray_blue"
     },
     {
       "id": 5,
       "name": "Skin",
       "hex": "#FEBA95",
-      "image": "skin.png"
+      "image": "skin"
     },
     {
       "id": 6,
       "name": "Dark Skin",
       "hex": "#F6A566",
-      "image": "dark_skin.png"
+      "image": "dark_skin"
     },
     {
       "id": 7,
       "name": "Elephant Gray",
       "hex": "#C3A88B",
-      "image": "elephant_gray.png"
+      "image": "elephant_gray"
     },
     {
       "id": 8,
       "name": "Yellow",
       "hex": "#FFED00",
-      "image": "yellow.png"
+      "image": "yellow"
     },
     {
       "id": 9,
       "name": "Purple",
       "hex": "#7A3295",
-      "image": "purple.png"
+      "image": "purple"
     },
     {
       "id": 10,
       "name": "Brown",
       "hex": "#8C4D18",
-      "image": "brown.png"
+      "image": "brown"
     },
     {
       "id": 11,
       "name": "Light Brown",
       "hex": "#AD6E29",
-      "image": "light_brown.png"
+      "image": "light_brown"
     },
     {
       "id": 12,
       "name": "Black",
       "hex": "#000000",
-      "image": "black.png"
+      "image": "black"
     },
     {
       "id": 13,
       "name": "Pink",
       "hex": "#FB888D",
-      "image": "pink.png"
+      "image": "pink"
     },
     {
       "id": 14,
       "name": "Hot Pink",
       "hex": "#EA5694",
-      "image": "hot_pink.png"
+      "image": "hot_pink"
     },
     {
       "id": 15,
       "name": "Orange",
       "hex": "#FA9D11",
-      "image": "orange.png"
+      "image": "orange"
     },
     {
       "id": 16,
       "name": "Dark Orange",
       "hex": "#ED772F",
-      "image": "dark_orange.png"
+      "image": "dark_orange"
     },
     {
       "id": 17,
       "name": "Green",
       "hex": "#229643",
-      "image": "green.png"
+      "image": "green"
     },
     {
       "id": 18,
       "name": "Light Green",
       "hex": "#B6B936",
-      "image": "light_green.png"
+      "image": "light_green"
     },
     {
       "id": 19,
       "name": "Red",
       "hex": "#F23619",
-      "image": "red.png"
+      "image": "red"
     }
   ]
