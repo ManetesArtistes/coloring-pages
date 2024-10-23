@@ -1,11 +1,10 @@
 package com.example.manetesartistes_game.colors
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.manetesartistes_game.R
 
@@ -16,6 +15,7 @@ class ColorPalette @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     private val colorPaletteRecyclerView: RecyclerView
+    private var colors: List<Color> = listOf()
 
     init {
         // Inflate the layout for this custom view
@@ -26,28 +26,24 @@ class ColorPalette @JvmOverloads constructor(
         setupRecyclerView()
     }
 
-    private fun setupRecyclerView() {
-        // List of colors
-        val colors = listOf(
-            Color.WHITE,
-            Color.RED,
-            Color.BLUE,
-            Color.GREEN,
-            Color.parseColor("#004d00"),
-            Color.YELLOW,
-            Color.BLACK,
-            Color.GRAY,
-            Color.parseColor("#8B4513") // Brown color (saddlebrown)
-        )
+    fun setColors(c: List<Color>) {
+        this.colors = c
+        render()
+    }
 
-        // Create and set the adapter
-        val adapter = ColorPaletteAdapter(colors) { selectedColor ->
-            // Notify about the selected color
+    private fun setupRecyclerView() {
+        // Se configura el GridLayoutManager con 2 columnas
+        val layoutManager = GridLayoutManager(context, 2) // 2 columnas
+        colorPaletteRecyclerView.layoutManager = layoutManager
+        render()
+    }
+
+    private fun render() {
+        println("============ count colors ${colors.size}")
+        val adapter = ColorAdapter(context, this.colors) { selectedColor ->
             onColorSelected(selectedColor)
         }
-
-        // Set the adapter and layout manager
-        colorPaletteRecyclerView.layoutManager = LinearLayoutManager(context)
+        println("============ count adapter ${adapter.itemCount}")
         colorPaletteRecyclerView.adapter = adapter
     }
 

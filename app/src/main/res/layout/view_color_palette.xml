@@ -2,15 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-<TextView
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:background="@color/black"
-    />
+    android:orientation="vertical"
+    android:background="@drawable/background_colors">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/colorPaletteRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:background="@android:color/transparent"/>
 </LinearLayout>
