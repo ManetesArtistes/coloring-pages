@@ -10,12 +10,12 @@
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:gravity="center"
-        android:layout_weight="10">
+        android:layout_weight="11">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:scaleType="matrix"
             tools:ignore="DiscouragedApi" />
     </LinearLayout>
@@ -23,7 +23,7 @@
 
     <com.example.manetesartistes_game.colors.ColorPalette
         android:id="@+id/colorPalette"
-        android:layout_width="10dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:background="@drawable/background_colors"
