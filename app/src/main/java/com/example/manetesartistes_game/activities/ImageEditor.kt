@@ -1,4 +1,4 @@
-package com.example.manetesartistes_game.imageEditor
+package com.example.manetesartistes_game.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
@@ -17,6 +16,7 @@ import com.example.manetesartistes_game.R
 import com.example.manetesartistes_game.colors.ColorLoader
 import com.example.manetesartistes_game.colors.ColorPalette
 import com.example.manetesartistes_game.draw.Draw
+import com.example.manetesartistes_game.imageEditor.FloodFillUtils
 
 class ImageEditor: AppCompatActivity() {
 
@@ -106,7 +106,13 @@ class ImageEditor: AppCompatActivity() {
                     bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
                     val targetColor = bitmap.getPixel(imageX, imageY)
 
-                    val newBitmap = FloodFillUtils.floodFill(bitmap, imageX, imageY, targetColor, this.selectedColor)
+                    val newBitmap = FloodFillUtils.floodFill(
+                        bitmap,
+                        imageX,
+                        imageY,
+                        targetColor,
+                        this.selectedColor
+                    )
 
                     imageView.setImageBitmap(newBitmap)
                 }

@@ -1,12 +1,12 @@
-package com.example.manetesartistes_game
+package com.example.manetesartistes_game.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.manetesartistes_game.R
 import com.example.manetesartistes_game.draw.Draw
 import com.example.manetesartistes_game.draw.DrawLoader
-import com.example.manetesartistes_game.imageEditor.ImageEditor
 
 
 class MainActivity : AppCompatActivity() {
