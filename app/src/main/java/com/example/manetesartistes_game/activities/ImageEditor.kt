@@ -70,10 +70,11 @@ class ImageEditor: AppCompatActivity() {
     private fun renderColorPalette(draw: Draw){
         val colorPalette = findViewById<ColorPalette>(R.id.colorPalette)
         val colors = ColorLoader.getColorsByIds(draw.colors, this)
+        colorPalette.setColors(colors)
+
         val resource = resources.getIdentifier(draw.coloredImage, "drawable", packageName)
         val bgResource = resources.getIdentifier(draw.squareBackgroundImage, "drawable", packageName)
         colorPalette.renderColorImage(resource, bgResource)
-        colorPalette.setColors(colors)
         // Set the listener to handle color selection
         colorPalette.onColorSelected = { selectedColor ->
             this.setSelectedColor(selectedColor)

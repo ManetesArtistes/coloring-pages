@@ -10,7 +10,7 @@ data class Draw(
     @SerializedName("white_image")
     val whiteImage: String,
 
-    @SerializedName("colored_image")
+    @SerializedName("draw_colored_image")
     val coloredImage: String,
 
     @SerializedName("square_background_image")
