@@ -72,14 +72,16 @@ class ImageEditor: AppCompatActivity() {
         val colors = ColorLoader.getColorsByIds(draw.colors, this)
         colorPalette.setColors(colors)
 
-        val resource = resources.getIdentifier(draw.coloredImage, "drawable", packageName)
-        val bgResource = resources.getIdentifier(draw.squareBackgroundImage, "drawable", packageName)
-        colorPalette.renderColorImage(resource, bgResource)
         // Set the listener to handle color selection
         colorPalette.onColorSelected = { selectedColor ->
             this.setSelectedColor(selectedColor)
             println(this.selectedColor)
         }
+
+        val resource = resources.getIdentifier(draw.coloredImage, "drawable", packageName)
+        val bgResource = resources.getIdentifier(draw.squareBackgroundImage, "drawable", packageName)
+        colorPalette.renderColorImage(resource, bgResource)
+
     }
 
     private fun getCalibrationScaleFactor(context: Context): Pair<Double, Double> {
