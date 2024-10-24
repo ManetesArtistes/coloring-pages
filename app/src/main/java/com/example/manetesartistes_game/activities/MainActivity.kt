@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.manetesartistes_game.R
-import com.example.manetesartistes_game.draw.Draw
+import com.example.manetesartistes_game.imageEditor.Draw
 import com.example.manetesartistes_game.draw.DrawLoader
 
 

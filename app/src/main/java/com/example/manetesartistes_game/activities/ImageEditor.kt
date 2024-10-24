@@ -15,7 +15,7 @@ import android.widget.LinearLayout
 import com.example.manetesartistes_game.R
 import com.example.manetesartistes_game.colors.ColorLoader
 import com.example.manetesartistes_game.colors.ColorPalette
-import com.example.manetesartistes_game.draw.Draw
+import com.example.manetesartistes_game.imageEditor.Draw
 import com.example.manetesartistes_game.imageEditor.FloodFillUtils
 
 class ImageEditor: AppCompatActivity() {
